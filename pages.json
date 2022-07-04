@@ -3,7 +3,7 @@
 		{
 			"path" : "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "login",
+				"navigationBarTitleText": "登录",
 				"enablePullDownRefresh": false
 			}
 
@@ -12,7 +12,7 @@
 			"path" : "pages/register/register",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "注册",
                 "enablePullDownRefresh": false
             }
             
@@ -27,9 +27,9 @@
         }
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "EMOS系统",
+		"navigationBarBackgroundColor": "#3474FF",
 		"backgroundColor": "#F8F8F8"
 	}
 }

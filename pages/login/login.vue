@@ -18,16 +18,37 @@ export default {
 	},
 	methods: {
 		login: function() {
-			uni.showToast({
-				title: '登录中',
-				duration: 500
+			let that = this;
+			uni.login({
+				provider: 'weixin',
+				success(resp) {
+					let code = resp.code;
+					that.ajax(that.url.login, 'POST', { code: code }, function(resp) {
+						let permission = resp.data.permission;
+						uni.setStorageSync('permission', permission);
+						// uni.showToast({
+						// 	title: '登录成功',
+						// 	duration: 1000
+						// });
+						// 跳转到登录页面 
+						uni.redirectTo({
+							url:'../index/index'
+						})
+					});
+				},
+				fail() {
+					uni.showToast({
+						title: "执行异常",
+						icon: 'none'
+					});
+				}
 			});
 		},
 		toRegiest: function() {
 			uni.navigateTo({
 				// 跳转到注册页面
-				url:'../register/register'
-			})
+				url: '../register/register'
+			});
 		}
 	}
 };
