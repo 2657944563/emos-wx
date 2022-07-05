@@ -21,7 +21,7 @@ Vue.prototype.ajax = function(url, method, data, fun) {
 		"url": url,
 		"method": method,
 		"header": {
-			token: uni.getStorageSync('token')
+			'token': uni.getStorageSync('token')
 		},
 		"data": data,
 		success(resp) {
@@ -50,8 +50,14 @@ Vue.prototype.ajax = function(url, method, data, fun) {
 
 				})
 			}
+		},
+		fail(resp) {
+			uni.showToast({
+				icon: 'error',
+				title: "系统服务器异常，请联系管理员"
+			})
 		}
 
-	})
+	});
 
 }

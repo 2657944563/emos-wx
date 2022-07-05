@@ -59,7 +59,7 @@ export default {
 								// 存储权限列表
 								uni.setStorageSync('permission', permission);
 								// 跳转首页
-								uni.redirectTo({
+								uni.switchTab({
 									url: '../index/index'
 								});
 							});

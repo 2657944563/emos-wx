@@ -18,20 +18,15 @@ export default {
 	},
 	methods: {
 		login: function() {
-			let that = this;
+		 	let that = this;
 			uni.login({
 				provider: 'weixin',
 				success(resp) {
-					let code = resp.code;
-					that.ajax(that.url.login, 'POST', { code: code }, function(resp) {
+					let Code = resp.code;
+					that.ajax(that.url.login, 'POST', { code: Code }, function(resp) {
 						let permission = resp.data.permission;
 						uni.setStorageSync('permission', permission);
-						// uni.showToast({
-						// 	title: '登录成功',
-						// 	duration: 1000
-						// });
-						// 跳转到登录页面 
-						uni.redirectTo({
+						uni.switchTab({
 							url:'../index/index'
 						})
 					});
