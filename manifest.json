@@ -59,9 +59,18 @@
     "mp-weixin" : {
         "appid" : "wxc0031be6c4621bf2",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "minified" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "获取用户考勤地址"
+            }
+        },
+        "uniStatistics" : {
+            "enable" : false
+        }
     },
     "mp-alipay" : {
         "usingComponents" : true

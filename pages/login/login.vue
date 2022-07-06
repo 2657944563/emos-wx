@@ -23,6 +23,8 @@ export default {
 				provider: 'weixin',
 				success(resp) {
 					let Code = resp.code;
+					console.log(Code)
+					// return
 					that.ajax(that.url.login, 'POST', { code: Code }, function(resp) {
 						let permission = resp.data.permission;
 						uni.setStorageSync('permission', permission);

@@ -10,7 +10,7 @@ const app = new Vue({
 })
 app.$mount()
 
-let baseUrl = "http://127.0.0.1:8080/emos-wx-api"
+let baseUrl = "http://192.168.0.220:8080/emos-wx-api"
 
 Vue.prototype.url = {
 	register: baseUrl + "/user/register",
@@ -20,6 +20,7 @@ Vue.prototype.ajax = function(url, method, data, fun) {
 	uni.request({
 		"url": url,
 		"method": method,
+		sslVerify:'false',
 		"header": {
 			'token': uni.getStorageSync('token')
 		},
@@ -54,7 +55,7 @@ Vue.prototype.ajax = function(url, method, data, fun) {
 		fail(resp) {
 			uni.showToast({
 				icon: 'error',
-				title: "系统服务器异常，请联系管理员"
+				title: "系统服务器错误"
 			})
 		}
 
