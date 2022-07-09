@@ -18,6 +18,6 @@
 </script>
 
 <style lang="less">
-	@import url(document.less);
+	@import url('document.less');
 
 </style>

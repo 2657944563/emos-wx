@@ -19,7 +19,7 @@
 					<text class="name">在线签到</text>
 				</view>
 				<view class="nav">
-					<image src="../../static/nav-2.png" mode="widthFix" class="icon"></image>
+					<image @tap="toPage('每周签到', '../checkin_result/checkin_result')" src="../../static/nav-2.png" mode="widthFix" class="icon"></image>
 					<text class="name">员工健康</text>
 				</view>
 				<view class="nav">

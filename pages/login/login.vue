@@ -18,6 +18,9 @@ export default {
 	},
 	methods: {
 		login: function() {
+			uni.showLoading({
+				title:'登录中'
+			})
 		 	let that = this;
 			uni.login({
 				provider: 'weixin',
@@ -32,6 +35,7 @@ export default {
 							url:'../index/index'
 						})
 					});
+					uni.hideLoading();
 				},
 				fail() {
 					uni.showToast({

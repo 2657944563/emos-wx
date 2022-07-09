@@ -56,6 +56,13 @@
 				"navigationBarTitleText": "拍照",
 				"enablePullDownRefresh": false
 			}
+		}, {
+			"path": "pages/checkin_result/checkin_result",
+			"style": {
+				"navigationBarTitleText": "周签",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {

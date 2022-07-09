@@ -14,13 +14,17 @@ let baseUrl = "http://192.168.0.220:8080/emos-wx-api"
 
 Vue.prototype.url = {
 	register: baseUrl + "/user/register",
-	login: baseUrl + "/user/login"
+	login: baseUrl + "/user/login",
+	checkin: baseUrl + "/checkin/checkin",
+	createFaceModel: baseUrl + "/checkin/createFaceModel",
+	validCanCheckIn: baseUrl + "/checkin/validCanCheckIn",
+	searchTodayCheckin: baseUrl+"/checkin/searchTodayCheckin"
 }
 Vue.prototype.ajax = function(url, method, data, fun) {
 	uni.request({
 		"url": url,
 		"method": method,
-		sslVerify:'false',
+		sslVerify: 'false',
 		"header": {
 			'token': uni.getStorageSync('token')
 		},
