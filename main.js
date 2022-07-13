@@ -18,8 +18,27 @@ Vue.prototype.url = {
 	checkin: baseUrl + "/checkin/checkin",
 	createFaceModel: baseUrl + "/checkin/createFaceModel",
 	validCanCheckIn: baseUrl + "/checkin/validCanCheckIn",
-	searchTodayCheckin: baseUrl+"/checkin/searchTodayCheckin"
+	searchTodayCheckin: baseUrl + "/checkin/searchTodayCheckin",
+	searchUserSummary: baseUrl + "/user/searchUserSummary",
+	searchMonthCheckin: baseUrl + "/checkin/searchMonthCheckin",
+	refreshMessage: baseUrl + "/message/refreshMessage",
+	searchMessageByPage: baseUrl + "/message/searchMessageByPage",
+	deleteMessageRefById: baseUrl + "/message/deleteMessageRefById",
+	searchMessageById: baseUrl + "/message/searchMessageById",
+	updateUnreadMessage: baseUrl + "/message/updateUnreadMessage"
 }
+Vue.prototype.checkPermission = function(perms) {
+	let permis = uni.getStorageSync("permission")
+	let resu = false
+	for (let one of perms) {
+		if (permis.indexOf(one) != -1) {
+			resu = true;
+			break;
+		}
+	}
+	return resu;
+}
+
 Vue.prototype.ajax = function(url, method, data, fun) {
 	uni.request({
 		"url": url,
